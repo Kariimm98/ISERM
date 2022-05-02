@@ -1,7 +1,9 @@
 package cat.uvic.teknos.m06.connectorSQL.app;
 
-import com.ctc.wstx.shaded.msv.org_isorelax.verifier.Schema;
+
+import cat.uvic.teknos.m06.connectorSQL.app.xml.Schema;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -9,7 +11,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class XmlSchemaLoader implements SchemaLoader {
-    private Schema schema;
+    private ConnectionProperties connection;
+    public Schema schema;
 
     public XmlSchemaLoader (String path){
         var file = new File(path);
@@ -21,6 +24,10 @@ public class XmlSchemaLoader implements SchemaLoader {
         }catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public Schema getSchema(){
+        return this.schema;
     }
 
     @Override

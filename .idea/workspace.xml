@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2809f5f8-88e3-4acf-a5df-8e724c5b40e1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/ConnectionProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/SchemaLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/XmlSchemaLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/SingleLineCommandSchemaLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/xml/Schema.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/xml/schema.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/SingleLineCommandSchemaLoaderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/resources/xml/schema.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/ConnectionProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/ConnectionProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/SchemaLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/SchemaLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/XmlSchemaLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/XmlSchemaLoader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +29,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -48,10 +54,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ConnectorSQL2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/test/resources" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.updates" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\10011093\source\repos\ConnectorSQL\app\src\test\resources" />
+      <recent name="C:\Users\10011093\source\repos\ConnectorSQL\app\src\main\resources\xml" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\10011093\source\repos\ConnectorSQL\utilities\xml" />
       <recent name="C:\Users\10011093\source\repos\ConnectorSQL\utilities" />
@@ -63,13 +76,28 @@
       <recent name="cat.uvic.teknos.m06.connectorsql.app" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="cat.uvic.teknos.m06.connectorSQL.app" />
       <recent name="cat.uvic.teknos.m06.connectorsql.app" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cat.uvic.teknos.m06.connectorSQL.app.xml" />
       <recent name="cat.uvic.teknos.m06.connectorSQL.app" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.SingleLineCommandSchemaLoaderTest">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cat.uvic.teknos.m06.connectorSQL.app.Main" />
+      <module name="ConnectorSQL.app.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cat.uvic.teknos.m06.connectorSQL.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ConnectorSQL [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -91,8 +119,33 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="SingleLineCommandSchemaLoaderTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+            <option value="--tests" />
+            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.SingleLineCommandSchemaLoaderTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.SingleLineCommandSchemaLoaderTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.ConnectorSQL [dependencies]" />
       </list>
     </recent_temporary>
@@ -107,5 +160,16 @@
       <updated>1651504772081</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/SingleLineCommandSchemaLoaderTest.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
