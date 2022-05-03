@@ -8,5 +8,23 @@
             address varchar(50),
             )
         </command>
+        <command>
+            CREATE TABLE `supplier` (
+            `id` SERIAL PRIMARY KEY,
+            `name` varchar(25) ,
+            `surname` varchar(25) ,
+            `address` varchar(50)
+            )
+        </command>
+        <command>
+            CREATE TABLE `products` ( `id` SERIAL NOT NULL ,
+            `name` VARCHAR(50) NOT NULL PRIMARY KEY,
+            `description` VARCHAR(100) NOT NULL ,
+            `price` REAL NOT NULL
+            )
+        </command>
+        <command>
+
+        </command>
     </commands>
 </schema>

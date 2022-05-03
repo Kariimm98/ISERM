@@ -8,5 +8,13 @@
             address varchar(50)
             )
         </command>
+        <command>
+            CREATE TABLE supplier (
+            id SERIAL PRIMARY KEY,
+            name varchar(25),
+            surname varchar(25),
+            address varchar(50)
+            )
+        </command>
     </commands>
 </schema>
