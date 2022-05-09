@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2809f5f8-88e3-4acf-a5df-8e724c5b40e1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Exception/ConnectionException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/resources/xml/schema_BAD.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/ExecuteCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/ExecuteCommands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/SchemaLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/SchemaLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/resources/xml/schema.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/xml/schema.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/ExecuteCommandsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/ExecuteCommandsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/resources/xml/schema.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/resources/xml/schema.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/resources/xml/schema_BAD.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/resources/xml/schema_BAD.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +113,29 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.ExecuteCommandsTest.notThrowException">
+    <configuration name="ExecuteCommandsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+            <option value="--tests" />
+            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.ExecuteCommandsTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="ExecuteCommandsTest.notThrowException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -208,29 +228,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SingleLineCommandSchemaLoaderTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":app:test" />
-            <option value="--tests" />
-            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.SingleLineCommandSchemaLoaderTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -245,10 +242,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.ExecuteCommandsTest.notThrowException" />
-        <item itemvalue="Gradle.ExecuteCommandsTest.throwsConnectionException" />
+        <item itemvalue="Gradle.ExecuteCommandsTest" />
         <item itemvalue="Gradle.ExecuteCommandsTest.throwExecuteCommandsException" />
+        <item itemvalue="Gradle.ExecuteCommandsTest.throwsConnectionException" />
         <item itemvalue="Gradle.ExecuteCommandsTest.thorwExecuteCommandsException" />
-        <item itemvalue="Gradle.SingleLineCommandSchemaLoaderTest" />
       </list>
     </recent_temporary>
   </component>
@@ -268,7 +265,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/ExecuteCommands.java</url>
-          <line>31</line>
+          <line>30</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

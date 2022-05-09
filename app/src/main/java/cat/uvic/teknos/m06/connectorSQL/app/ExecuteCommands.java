@@ -24,7 +24,6 @@ public class ExecuteCommands implements SchemaLoader{
     @Override
     public void load() throws ExecuteCommandException, ConnectionException, SQLException {
         var error = "";
-
             var con = getConnection();
             var statement = con.createStatement();
 
@@ -32,7 +31,8 @@ public class ExecuteCommands implements SchemaLoader{
             error = executeCommand(error, statement, i);
         }
 
-        if(logExist()){
+        if(!error.isEmpty()){
+            addToLog(error);
             throw new ExecuteCommandException("has been errors on Execute, view log on: "+ pathLog);
         }
     }
@@ -42,9 +42,8 @@ public class ExecuteCommands implements SchemaLoader{
             statement.executeUpdate(commands[i]);
         }catch (SQLException e) {
             var num = i +1;
-            var mes = "\n Error en ejecutar Comando nº " + num + e.getMessage();
+            var mes = "\n Error executing command nº " + num +" "+ e.getMessage();
             error += mes;
-            addToLog(mes);
         }
         return error;
     }

@@ -14,7 +14,7 @@
             id SERIAL PRIMARY KEY,
             name varchar(25),
             surname varchar(25),
-            address varchar(50),
+            address varchar(50)
             )
         </command>
         <command>
@@ -22,7 +22,7 @@
             `id` SERIAL PRIMARY KEY,
             `name` varchar(25) ,
             `surname` varchar(25) ,
-            `address` varchar(50),
+            `address` varchar(50)
             )
         </command>
         <command>
@@ -30,11 +30,8 @@
             `id` SERIAL PRIMARY KEY ,
             `name` VARCHAR(50) NOT NULL,
             `description` VARCHAR(100) NOT NULL ,
-            `price` REAL NOT NULL,
+            `price` REAL NOT NULL
             )
-        </command>
-        <command>
-
         </command>
     </commands>
 </schema>
