@@ -1,5 +1,6 @@
 package cat.uvic.teknos.m06.connectorSQL.app;
 
+import cat.uvic.teknos.m06.connectorSQL.app.Exception.ConnectionException;
 import cat.uvic.teknos.m06.connectorSQL.app.Exception.ExecuteCommandException;
 
 import java.io.BufferedWriter;
@@ -21,11 +22,11 @@ public class ExecuteCommands implements SchemaLoader{
     }
 
     @Override
-    public void load() throws ExecuteCommandException,SQLException {
+    public void load() throws ExecuteCommandException, ConnectionException, SQLException {
         var error = "";
 
-        var con = getConnection();
-        var statement = con.createStatement();
+            var con = getConnection();
+            var statement = con.createStatement();
 
         for(int i = 0; commands.length> i;i++ ){
             error = executeCommand(error, statement, i);
@@ -48,14 +49,16 @@ public class ExecuteCommands implements SchemaLoader{
         return error;
     }
 
-    private Connection getConnection()  {
+    private Connection getConnection() throws ConnectionException {
         try {
             return DriverManager.getConnection(conProps.getUrl(), conProps.getUsername(), conProps.getPassword());
         } catch (SQLException e) {
+            var mess = "\n error connecting to DB: ";
+            addToLog(mess);
             addToLog("\n " +e.getMessage());
             e.printStackTrace();
+            throw new ConnectionException(e.getMessage());
         }
-        return null;
     }
 
     private void addToLog(String mess){
@@ -66,7 +69,9 @@ public class ExecuteCommands implements SchemaLoader{
             }
             FileWriter fw = new FileWriter(log);
             BufferedWriter writter = new BufferedWriter(fw);
+            writter.newLine();
             writter.write(mess);
+
 
             writter.close();
         } catch (IOException e) {

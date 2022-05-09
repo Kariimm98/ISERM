@@ -1,5 +1,6 @@
 package cat.uvic.teknos.m06.connectorSQL.app;
 
+import cat.uvic.teknos.m06.connectorSQL.app.Exception.ConnectionException;
 import cat.uvic.teknos.m06.connectorSQL.app.Exception.ExecuteCommandException;
 import org.junit.jupiter.api.Test;
 
@@ -12,24 +13,28 @@ class ExecuteCommandsTest {
     @Test
     void notThrowException() {
 
-            ConnectionProperties conn = new ConnectionProperties("jdbc:mysql://localhost:3306/mysql","root","");
-            XmlSchemaLoader schema = new XmlSchemaLoader("src/test/resources/xml/schema.xml");
-            var singleCommandSchema = new ExecuteCommands(schema,conn);
+        ConnectionProperties conn = new ConnectionProperties("jdbc:mysql://localhost:3306/mysql","root","");
+        XmlSchemaLoader schema = new XmlSchemaLoader("src/test/resources/xml/schema.xml");
+        var executeCommands = new ExecuteCommands(schema,conn);
 
-        assertDoesNotThrow(()->singleCommandSchema.load());
+        assertDoesNotThrow(()->executeCommands.load());
     }
 
     @Test
     void throwExecuteCommandsException(){
         ConnectionProperties conn = new ConnectionProperties("jdbc:mysql://localhost:3306/mysql","root","");
-        XmlSchemaLoader schema = new XmlSchemaLoader("src/test/resources/xml/schema.xml");
+        XmlSchemaLoader schema = new XmlSchemaLoader("src/test/resources/xml/schema_BAD.xml");
         var executeCommands = new ExecuteCommands(schema,conn);
 
         assertThrows(ExecuteCommandException.class,()->executeCommands.load());
     }
 
     @Test
-    void throwExceptionErrorLog(){
+    void throwsConnectionException(){
+        ConnectionProperties conn = new ConnectionProperties("","","");
+        XmlSchemaLoader schema = new XmlSchemaLoader("src/test/resources/xml/schema.xml");
+        var executeCommands = new ExecuteCommands(schema,conn);
 
+        assertThrows(ConnectionException.class,()->executeCommands.load());
     }
 }
