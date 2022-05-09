@@ -16,5 +16,16 @@
             address varchar(50)
             )
         </command>
+        <command>
+            CREATE TABLE products (
+            id SERIAL PRIMARY KEY,
+            name varchar(25),
+            desc varchar(50),
+            price MONEY,
+            )
+        </command>
+        <command>
+
+        </command>
     </commands>
 </schema>

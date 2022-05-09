@@ -1,6 +1,15 @@
 <schema>
     <commands>
         <command>
+            DROP TABLE clients
+        </command>
+        <command>
+            DROP TABLE supplier
+        </command>
+        <command>
+            DROP TABLE products
+        </command>
+        <command>
             CREATE TABLE clients (
             id SERIAL PRIMARY KEY,
             name varchar(25),
