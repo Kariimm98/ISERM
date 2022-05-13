@@ -1,15 +1,6 @@
 <schema>
     <commands>
         <command>
-            DROP TABLE IF EXISTS clients
-        </command>
-        <command>
-            DROP TABLE IF EXISTS supplier
-        </command>
-        <command>
-            DROP TABLE IF EXISTS products
-        </command>
-        <command>
             CREATE TABLE clients (
             id SERIAL PRIMARY KEY,
             name varchar(25),
@@ -18,19 +9,18 @@
             )
         </command>
         <command>
-            CREATE TABLE `supplier` (
-            `id` SERIAL PRIMARY KEY,
-            `name` varchar(25) ,
-            `surname` varchar(25) ,
-            `address` varchar(50)
+            CREATE TABLE supplier (
+            id SERIAL PRIMARY KEY,
+            name varchar(25),
+            surname varchar(25),
+            address varchar(50)
             )
         </command>
         <command>
-            CREATE TABLE `products` (
-            `id` SERIAL PRIMARY KEY ,
-            `name` VARCHAR(50) NOT NULL,
-            `description` VARCHAR(100) NOT NULL ,
-            `price` REAL NOT NULL
+            CREATE TABLE products (
+            id SERIAL PRIMARY KEY,
+            name varchar(25),
+            description varchar(50)
             )
         </command>
     </commands>
