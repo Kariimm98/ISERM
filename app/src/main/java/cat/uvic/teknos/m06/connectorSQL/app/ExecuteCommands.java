@@ -15,7 +15,7 @@ import java.sql.Statement;
 public class ExecuteCommands implements SchemaLoader{
     public final String[] commands;
     private final ConnectionProperties conProps;
-    private static String pathLog = "C:\\tmp\\executeLog.txt";
+    private static String pathLog = "../../../../logs/errorSchemaLoaderLog";
     public ExecuteCommands(XmlSchemaLoader schema, ConnectionProperties conn) {
         this.commands = schema.getSchema().getCommands();
         this.conProps = conn;

@@ -1,6 +1,15 @@
 <schema>
     <commands>
         <command>
+            DROP DATABASE IF EXISTS ISERM
+        </command>
+        <command>
+            CREATE DATABASE ISERM
+        </command>
+        <command>
+            USE ISERM
+        </command>
+        <command>
             DROP TABLE IF EXISTS clients
         </command>
         <command>

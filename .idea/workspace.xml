@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2809f5f8-88e3-4acf-a5df-8e724c5b40e1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/ISERM.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/ExecuteCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/ExecuteCommands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/resources/xml/schema.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/resources/xml/schema.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/resources/xml/schema_BAD.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/resources/xml/schema_BAD.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,13 +80,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/resources/xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.updates" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -92,6 +95,7 @@
       <recent name="C:\Users\10011093\source\repos\ConnectorSQL\app\src\test\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\10011093\source\repos\ISERM\app" />
       <recent name="C:\Users\10011093\source\repos\ConnectorSQL\app\src\test\resources\xml" />
       <recent name="C:\Users\10011093\source\repos\ConnectorSQL\utilities\xml" />
       <recent name="C:\Users\10011093\source\repos\ConnectorSQL\utilities" />
@@ -227,22 +231,11 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.ExecuteCommandsTest" />
-        <item itemvalue="Gradle.ExecuteCommandsTest.throwExecuteCommandsException" />
         <item itemvalue="Gradle.ExecuteCommandsTest.notThrowException" />
+        <item itemvalue="Gradle.ExecuteCommandsTest.throwExecuteCommandsException" />
         <item itemvalue="Gradle.ExecuteCommandsTest.throwsConnectionException" />
         <item itemvalue="Gradle.ExecuteCommandsTest.thorwExecuteCommandsException" />
       </list>
@@ -258,6 +251,17 @@
       <updated>1651504772081</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -277,5 +281,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
