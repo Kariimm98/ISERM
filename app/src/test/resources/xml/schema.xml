@@ -1,15 +1,6 @@
 <schema>
     <commands>
         <command>
-            DROP DATABASE IF EXISTS ISERM
-        </command>
-        <command>
-            CREATE DATABASE ISERM
-        </command>
-        <command>
-            USE ISERM
-        </command>
-        <command>
             DROP TABLE IF EXISTS clients
         </command>
         <command>
@@ -23,22 +14,38 @@
             id SERIAL PRIMARY KEY,
             name varchar(25),
             surname varchar(25),
-            address varchar(50)
+            address varchar(50),
             )
         </command>
         <command>
-            CREATE TABLE supplier (
-            id SERIAL PRIMARY KEY,
-            name varchar(25),
-            surname varchar(25),
-            address varchar(50)
+            CREATE TABLE `supplier` (
+            `id` SERIAL PRIMARY KEY,
+            `name` varchar(25) ,
+            `surname` varchar(25) ,
+            `address` varchar(50),
             )
         </command>
         <command>
-            CREATE TABLE products (
-            id SERIAL PRIMARY KEY,
-            name varchar(25),
-            description varchar(50)
+            CREATE TABLE `products` (
+            `id` SERIAL PRIMARY KEY ,
+            `name` VARCHAR(50) NOT NULL,
+            `description` VARCHAR(100) NOT NULL ,
+            `price` REAL NOT NULL,
+            )
+        </command>
+        <command>
+            CREATE TABLE `purchase_order_header` (
+            `id` SERIAL PRIMARY KEY ,
+            `id_client` INT FOREIGN KEY id REFERENCES(client),
+            `date` DATE
+            )
+        </command>
+        <command>
+            CREATE TABLE `purchase_order_line`(
+            `id` SERIAL PRIMARY KEY,
+            `id_header` INT FOREIGN KEY id REFERENCES(purchase_order_header),
+            `id_product` INT FOREIGN KEY id REFERENCES(products),
+            `quantity` FLOAT(5,3)
             )
         </command>
     </commands>
