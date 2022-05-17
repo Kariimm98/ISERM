@@ -15,17 +15,22 @@ import java.sql.Statement;
 public class ExecuteCommands implements SchemaLoader{
     public final String[] commands;
     private final ConnectionProperties conProps;
-    private static String pathLog = "../../../../logs/errorSchemaLoaderLog";
-    public ExecuteCommands(XmlSchemaLoader schema, ConnectionProperties conn) {
+    private static String pathLog = "logs/errorSchemaLoaderLog";
+    public Connection connection;
+
+
+    public ExecuteCommands(XmlSchemaLoader schema, ConnectionProperties conn) throws ConnectionException{
         this.commands = schema.getSchema().getCommands();
         this.conProps = conn;
+        this.connection = getConnection();
     }
 
     @Override
     public void load() throws ExecuteCommandException, ConnectionException, SQLException {
+        clearLog();
         var error = "";
-            var con = getConnection();
-            var statement = con.createStatement();
+
+            var statement = this.connection.createStatement();
 
         for(int i = 0; commands.length> i;i++ ){
             error = executeCommand(error, statement, i);
@@ -50,7 +55,7 @@ public class ExecuteCommands implements SchemaLoader{
 
     private Connection getConnection() throws ConnectionException {
         try {
-            return DriverManager.getConnection(conProps.getUrl(), conProps.getUsername(), conProps.getPassword());
+            return  DriverManager.getConnection(conProps.getUrl(), conProps.getUsername(), conProps.getPassword());
         } catch (SQLException e) {
             var mess = "\n error connecting to DB: ";
             addToLog(mess);
@@ -77,6 +82,16 @@ public class ExecuteCommands implements SchemaLoader{
             e.printStackTrace();
         }
 
+    }
+    private void clearLog(){
+        File log = new File(pathLog);
+        try {
+            if (log.exists()) {
+                log.delete();
+            }
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
     }
 
     private boolean logExist(){

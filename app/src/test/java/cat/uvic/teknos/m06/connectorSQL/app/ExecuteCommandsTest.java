@@ -15,26 +15,35 @@ class ExecuteCommandsTest {
 
         ConnectionProperties conn = new ConnectionProperties("jdbc:mysql://localhost:3306/mysql","root","");
         XmlSchemaLoader schema = new XmlSchemaLoader("src/test/resources/xml/schema.xml");
-        var executeCommands = new ExecuteCommands(schema,conn);
+        final ExecuteCommands[] executeCommands = new ExecuteCommands[1];
+        assertDoesNotThrow(()-> executeCommands[0] = new ExecuteCommands(schema,conn));
 
-        assertDoesNotThrow(()->executeCommands.load());
+
+        assertDoesNotThrow(()-> executeCommands[0].load());
     }
 
     @Test
-    void throwExecuteCommandsException(){
+    void throwExecuteCommandsException() throws ConnectionException{
         ConnectionProperties conn = new ConnectionProperties("jdbc:mysql://localhost:3306/mysql","root","");
         XmlSchemaLoader schema = new XmlSchemaLoader("src/test/resources/xml/schema_BAD.xml");
-        var executeCommands = new ExecuteCommands(schema,conn);
+        ExecuteCommands executeCommands;
 
+        assertDoesNotThrow( ()->new ExecuteCommands(schema,conn));
+
+        executeCommands = new ExecuteCommands(schema,conn);
         assertThrows(ExecuteCommandException.class,()->executeCommands.load());
     }
 
     @Test
-    void throwsConnectionException(){
+    void throwsConnectionException() throws ConnectionException {
         ConnectionProperties conn = new ConnectionProperties("","","");
         XmlSchemaLoader schema = new XmlSchemaLoader("src/test/resources/xml/schema.xml");
-        var executeCommands = new ExecuteCommands(schema,conn);
 
-        assertThrows(ConnectionException.class,()->executeCommands.load());
+
+        assertThrows(ConnectionException.class,()->new ExecuteCommands(schema,conn));
+        ExecuteCommands executeCommands = new ExecuteCommands(schema,conn);
+
+        assertDoesNotThrow(()->executeCommands.load()); ;
     }
+
 }

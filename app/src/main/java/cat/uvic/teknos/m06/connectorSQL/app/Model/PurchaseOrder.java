@@ -6,13 +6,13 @@ import java.util.List;
 public class PurchaseOrder {
     private int id;
     private Client client;
-    private Date data;
+    private Date purchased_on;
     private List<PurchaseLineOrder> lines;
 
     public PurchaseOrder(int id, Client client, Date data, List<PurchaseLineOrder> lines) {
         this.id = id;
         this.client = client;
-        this.data = data;
+        this.purchased_on = data;
         this.lines = lines;
     }
 
@@ -33,11 +33,11 @@ public class PurchaseOrder {
     }
 
     public Date getData() {
-        return data;
+        return purchased_on;
     }
 
     public void setData(Date data) {
-        this.data = data;
+        this.purchased_on = data;
     }
 
     public List<PurchaseLineOrder> getLines() {

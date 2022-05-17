@@ -16,6 +16,7 @@ public class XmlSchemaLoader implements SchemaLoader {
 
     public XmlSchemaLoader (String path){
         var file = new File(path);
+
         XmlMapper xmlMapper = new XmlMapper();
         try{
             var xml = Files.readString(Path.of(path));

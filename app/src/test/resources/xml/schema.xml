@@ -1,51 +1,54 @@
 <schema>
     <commands>
         <command>
-            DROP TABLE IF EXISTS clients
+            DROP DATABASE IF EXISTS ISERM
         </command>
         <command>
-            DROP TABLE IF EXISTS supplier
+            CREATE DATABASE ISERM
         </command>
         <command>
-            DROP TABLE IF EXISTS products
+            USE ISERM
         </command>
         <command>
-            CREATE TABLE clients (
-            id SERIAL PRIMARY KEY,
+            CREATE TABLE client (
+            id INT AUTO_INCREMENT PRIMARY KEY,
             name varchar(25),
             surname varchar(25),
-            address varchar(50),
+            address varchar(50)
             )
         </command>
         <command>
             CREATE TABLE `supplier` (
-            `id` SERIAL PRIMARY KEY,
+            `id` INT AUTO_INCREMENT PRIMARY KEY,
             `name` varchar(25) ,
             `surname` varchar(25) ,
-            `address` varchar(50),
+            `address` varchar(50)
             )
         </command>
         <command>
-            CREATE TABLE `products` (
-            `id` SERIAL PRIMARY KEY ,
+            CREATE TABLE `product` (
+            `id` INT AUTO_INCREMENT PRIMARY KEY,
             `name` VARCHAR(50) NOT NULL,
             `description` VARCHAR(100) NOT NULL ,
-            `price` REAL NOT NULL,
+            `price` FLOAT(13,3) NOT NULL
             )
         </command>
         <command>
             CREATE TABLE `purchase_order_header` (
-            `id` SERIAL PRIMARY KEY ,
-            `id_client` INT FOREIGN KEY id REFERENCES(client),
-            `date` DATE
+            `id` INT AUTO_INCREMENT PRIMARY KEY,
+            `id_client` INT,
+            `purchased_on` DATE,
+            FOREIGN KEY (id_client) REFERENCES client(id)
             )
         </command>
         <command>
             CREATE TABLE `purchase_order_line`(
-            `id` SERIAL PRIMARY KEY,
-            `id_header` INT FOREIGN KEY id REFERENCES(purchase_order_header),
-            `id_product` INT FOREIGN KEY id REFERENCES(products),
-            `quantity` FLOAT(5,3)
+            `id` INT AUTO_INCREMENT PRIMARY KEY,
+            `id_header` INT ,
+            `id_product` INT,
+            `quantity` FLOAT(5,3),
+            FOREIGN KEY (id_header) REFERENCES purchase_order_header(id),
+            FOREIGN KEY (id_product) REFERENCES product(id)
             )
         </command>
     </commands>
