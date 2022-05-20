@@ -10,4 +10,6 @@ public interface Repository <Model>{
     void delete(Model model);
     Model getById(int id);
     List<Model> getAll();
+    void insert(Model model) throws Exception;
+    void update(Model model) throws Exception;
 }

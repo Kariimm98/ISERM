@@ -22,9 +22,9 @@ public class ProductRepository implements Repository<Product>{
     @Override
     public void save(Product product) throws ProductException {
         if(product.getId() == 0) {
-            insertProduct(product);
+            insert(product);
         }else{
-            updateProduct(product);
+            update(product);
         }
     }
 
@@ -43,7 +43,8 @@ public class ProductRepository implements Repository<Product>{
         return null;
     }
 
-    private void insertProduct(Product product) throws ProductException {
+    @Override
+    public void insert(Product product) throws ProductException {
         try{
             var stat = conn.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
 
@@ -67,7 +68,8 @@ public class ProductRepository implements Repository<Product>{
         }
     }
 
-    private void updateProduct(Product product) throws ProductException {
+    @Override
+    public void update(Product product) throws ProductException {
         try{
             var stat = conn.prepareStatement(update);
 
@@ -89,6 +91,4 @@ public class ProductRepository implements Repository<Product>{
             throw new ProductException("could not updated client: "+ product.getName());
         }
     }
-
-
 }

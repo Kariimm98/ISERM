@@ -9,9 +9,10 @@ import java.sql.Statement;
 import java.util.List;
 
 public class ClientRepository implements Repository<Client>{
-    private  Connection conn;
-    private  String insert = "INSERT INTO client SET name = ?, surname = ?, address = ? ";
+    private Connection conn;
+    private String insert = "INSERT INTO client SET name = ?, surname = ?, address = ? ";
     private String update = "UPDATE client SET name = ?, surname = ?, address = ? where id = ?";
+    private String delete = "DELETE FROM client WHERE id = ?";
 
 
     public ClientRepository(Connection conn){
@@ -22,14 +23,29 @@ public class ClientRepository implements Repository<Client>{
     public void save(Client client) throws ClientExcpetion {
 
         if(client.getId() == 0) {
-            insertClient(client);
+            insert(client);
         }else{
-            updateClient(client);
+            update(client);
         }
+    }
+
+    @Override
+    public void delete(Client client) {
 
     }
 
-    private void insertClient(Client client) throws ClientExcpetion{
+    @Override
+    public Client getById(int id) {
+        return null;
+    }
+
+    @Override
+    public List<Client> getAll() {
+        return null;
+    }
+
+    @Override
+    public void insert(Client client) throws ClientExcpetion{
         try{
             var stat = conn.prepareStatement(insert,Statement.RETURN_GENERATED_KEYS);
 
@@ -53,7 +69,8 @@ public class ClientRepository implements Repository<Client>{
         }
     }
 
-    private void updateClient(Client client) throws ClientExcpetion{
+    @Override
+    public void update(Client client) throws ClientExcpetion{
 
         try{
             var stat = conn.prepareStatement(update);
@@ -75,20 +92,5 @@ public class ClientRepository implements Repository<Client>{
         }catch(Exception e){
             throw new ClientExcpetion("could not updated client: "+ client.getName() + " " + client.getSurname());
         }
-    }
-
-    @Override
-    public void delete(Client client) {
-
-    }
-
-    @Override
-    public Client getById(int id) {
-        return null;
-    }
-
-    @Override
-    public List<Client> getAll() {
-        return null;
     }
 }
