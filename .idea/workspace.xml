@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2809f5f8-88e3-4acf-a5df-8e724c5b40e1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Exception/ClientExcpetion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/ClientRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/ClientRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Exception/ProductException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/ProductRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/ExecuteCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/ExecuteCommands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Model/PurchaseOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Model/PurchaseOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/ClientRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/XmlSchemaLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/XmlSchemaLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/ExecuteCommandsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/ExecuteCommandsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/resources/xml/schema.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/resources/xml/schema.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/ClientRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/ClientRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,8 +117,8 @@
       <recent name="cat.uvic.teknos.m06.connectorSQL.app" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ClientRepositoryTest">
-    <configuration name="ClientRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.ProductRepositoryTest">
+    <configuration name="ClientRepositoryTest.throwsClientException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -134,7 +131,7 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.ClientRepositoryTest&quot;" />
+            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.ClientRepositoryTest.throwsClientException&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -144,7 +141,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ClientRepositoryTest.notThrowExcpetion" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProductRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -157,7 +154,7 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.ClientRepositoryTest.notThrowExcpetion&quot;" />
+            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.ProductRepositoryTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -167,7 +164,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ExecuteCommandsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProductRepositoryTest.NotThrowsExceptionOnInsert" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -180,7 +177,7 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.ExecuteCommandsTest&quot;" />
+            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.ProductRepositoryTest.NotThrowsExceptionOnInsert&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -190,7 +187,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ExecuteCommandsTest.notThrowException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProductRepositoryTest.ThrowProductException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -203,7 +200,7 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.ExecuteCommandsTest.notThrowException&quot;" />
+            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.ProductRepositoryTest.ThrowProductException&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -213,7 +210,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ExecuteCommandsTest.throwExecuteCommandsException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProductRepositoryTest.notThrowExcpetionOnUpdate" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -226,7 +223,7 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.ExecuteCommandsTest.throwExecuteCommandsException&quot;" />
+            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.ProductRepositoryTest.notThrowExcpetionOnUpdate&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -238,11 +235,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ClientRepositoryTest" />
-        <item itemvalue="Gradle.ClientRepositoryTest.notThrowExcpetion" />
-        <item itemvalue="Gradle.ExecuteCommandsTest" />
-        <item itemvalue="Gradle.ExecuteCommandsTest.notThrowException" />
-        <item itemvalue="Gradle.ExecuteCommandsTest.throwExecuteCommandsException" />
+        <item itemvalue="Gradle.ProductRepositoryTest" />
+        <item itemvalue="Gradle.ProductRepositoryTest.ThrowProductException" />
+        <item itemvalue="Gradle.ProductRepositoryTest.notThrowExcpetionOnUpdate" />
+        <item itemvalue="Gradle.ProductRepositoryTest.NotThrowsExceptionOnInsert" />
+        <item itemvalue="Gradle.ClientRepositoryTest.throwsClientException" />
       </list>
     </recent_temporary>
   </component>
@@ -280,14 +277,29 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/ClientRepositoryTest.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/ClientRepository.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/ClientRepository.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="9" />
+          <line>33</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/ClientRepositoryTest.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/ClientRepository.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/ProductRepositoryTest.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

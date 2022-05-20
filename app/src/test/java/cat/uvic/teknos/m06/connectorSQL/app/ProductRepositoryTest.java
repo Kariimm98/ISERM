@@ -1,20 +1,19 @@
 package cat.uvic.teknos.m06.connectorSQL.app;
 
-import cat.uvic.teknos.m06.connectorSQL.app.Exception.ClientExcpetion;
 import cat.uvic.teknos.m06.connectorSQL.app.Exception.ConnectionException;
-import cat.uvic.teknos.m06.connectorSQL.app.Exception.ExecuteCommandException;
+import cat.uvic.teknos.m06.connectorSQL.app.Exception.ProductException;
 import cat.uvic.teknos.m06.connectorSQL.app.Model.Client;
+import cat.uvic.teknos.m06.connectorSQL.app.Model.Product;
 import cat.uvic.teknos.m06.connectorSQL.app.Repositories.ClientRepository;
+import cat.uvic.teknos.m06.connectorSQL.app.Repositories.ProductRepository;
 import org.junit.jupiter.api.Test;
-
-import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ClientRepositoryTest {
+public class ProductRepositoryTest {
 
     @Test
-    void notThrowExcpetionOnInsert() throws ConnectionException{
+    void NotThrowsExceptionOnInsert() throws ConnectionException {
         ConnectionProperties conn = new ConnectionProperties("jdbc:mysql://localhost:3306/iserm","root","");
         XmlSchemaLoader schema = new XmlSchemaLoader("src/test/resources/xml/schema.xml");
 
@@ -22,12 +21,12 @@ public class ClientRepositoryTest {
         ExecuteCommands exec = new ExecuteCommands(schema,conn);
 
 
-        Client cli = new Client(0,"karim","el Bouzzaoui del Moral", "Av. Olímpia 11B 5a 4rta");
-        ClientRepository rep = new ClientRepository(exec.connection);
+        Product product = new Product(0,"logitech mouse G-403","Mouse optico 400-16000 dpi ajustables",(float)43.98);
+        ProductRepository rep = new ProductRepository(exec.connection);
 
-        assertDoesNotThrow(()->rep.save(cli));
+        assertDoesNotThrow(()->rep.save(product));
 
-        assertNotEquals(0,cli.getId());
+        assertNotEquals(0,product.getId());
     }
 
     @Test
@@ -38,30 +37,28 @@ public class ClientRepositoryTest {
         assertDoesNotThrow(()->new ExecuteCommands(schema,conn));
         ExecuteCommands exec = new ExecuteCommands(schema,conn);
 
+        Product product = new Product(1,"logitech mouse G-403","Mouse optico 400-16000 dpi ajustables",(float)24.12);
+        ProductRepository rep = new ProductRepository(exec.connection);
 
-        Client cli = new Client(9,"Karim","el Bouzzaoui del Moral", "Av. Olímpia 11B 5a 4rta");
-        ClientRepository rep = new ClientRepository(exec.connection);
+        assertDoesNotThrow(()->rep.save(product));
 
-        assertDoesNotThrow(()->rep.save(cli));
-
-        assertNotEquals(0,cli.getId());
+        assertNotEquals(0,product.getId());
     }
-    @Test
-    void throwsClientException() throws ConnectionException {
 
+    @Test
+    void ThrowProductException() throws ConnectionException{
         ConnectionProperties conn = new ConnectionProperties("jdbc:mysql://localhost:3306/iserm","root","");
         XmlSchemaLoader schema = new XmlSchemaLoader("src/test/resources/xml/schema.xml");
 
         assertDoesNotThrow(()->new ExecuteCommands(schema,conn));
         ExecuteCommands exec = new ExecuteCommands(schema,conn);
 
+        Product product = new Product(-1,"logitech mouse G-403","Mouse optico 400-16000 dpi ajustables",(float)24.12);
+        ProductRepository rep = new ProductRepository(exec.connection);
 
-        Client cli = new Client(-1,"Karim","el Bouzzaoui del Moral", "Av. Olímpia 11B 5a 4rta");
-        ClientRepository rep = new ClientRepository(exec.connection);
 
-        assertThrows(ClientExcpetion.class,()->rep.save(cli));
+        assertThrows(ProductException.class,()->rep.save(product));
 
-        assertNotEquals(0,cli.getId());
-
+        assertNotEquals(0,product.getId());
     }
 }

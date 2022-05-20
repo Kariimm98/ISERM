@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface Repository <Model>{
 
-    void save(Model model) throws ClientExcpetion;
+    void save(Model model) throws Exception;
     void delete(Model model);
     Model getById(int id);
     List<Model> getAll();
