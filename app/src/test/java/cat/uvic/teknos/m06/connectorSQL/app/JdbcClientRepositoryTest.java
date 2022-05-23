@@ -2,16 +2,13 @@ package cat.uvic.teknos.m06.connectorSQL.app;
 
 import cat.uvic.teknos.m06.connectorSQL.app.Exception.ClientExcpetion;
 import cat.uvic.teknos.m06.connectorSQL.app.Exception.ConnectionException;
-import cat.uvic.teknos.m06.connectorSQL.app.Exception.ExecuteCommandException;
 import cat.uvic.teknos.m06.connectorSQL.app.Model.Client;
-import cat.uvic.teknos.m06.connectorSQL.app.Repositories.ClientRepository;
+import cat.uvic.teknos.m06.connectorSQL.app.Repositories.JdbcClientRepository;
 import org.junit.jupiter.api.Test;
-
-import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ClientRepositoryTest {
+public class JdbcJdbcClientRepositoryTest {
 
     @Test
     void notThrowExcpetionOnInsert() throws ConnectionException{
@@ -23,7 +20,7 @@ public class ClientRepositoryTest {
 
 
         Client cli = new Client(0,"karim","el Bouzzaoui del Moral", "Av. Olímpia 11B 5a 4rta");
-        ClientRepository rep = new ClientRepository(exec.connection);
+        JdbcClientRepository rep = new JdbcClientRepository(exec.connection);
 
         assertDoesNotThrow(()->rep.save(cli));
 
@@ -40,7 +37,7 @@ public class ClientRepositoryTest {
 
 
         Client cli = new Client(9,"Karim","el Bouzzaoui del Moral", "Av. Olímpia 11B 5a 4rta");
-        ClientRepository rep = new ClientRepository(exec.connection);
+        JdbcClientRepository rep = new JdbcClientRepository(exec.connection);
 
         assertDoesNotThrow(()->rep.save(cli));
 
@@ -57,7 +54,7 @@ public class ClientRepositoryTest {
 
 
         Client cli = new Client(-1,"Karim","el Bouzzaoui del Moral", "Av. Olímpia 11B 5a 4rta");
-        ClientRepository rep = new ClientRepository(exec.connection);
+        JdbcClientRepository rep = new JdbcClientRepository(exec.connection);
 
         assertThrows(ClientExcpetion.class,()->rep.save(cli));
 

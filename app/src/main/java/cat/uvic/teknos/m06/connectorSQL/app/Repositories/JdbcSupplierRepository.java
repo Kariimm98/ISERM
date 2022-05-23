@@ -12,7 +12,9 @@ public class SupplierRepository implements Repository<Supplier>{
     private Connection conn;
     private String insert = "INSERT INTO supplier SET name = ?, surname = ?, address = ? ";
     private String update = "UPDATE supplier SET name = ?, surname = ?, address = ? where id = ?";
-    private String delete = "DELETE FROM supplier WHERE id = ?";
+    private String delete = "DELETE FROM suppolier WHERE id = ? ";
+    private String select = "SELECT * FROM supplier WHERE id = ?";
+    private String select_all = "SELECT * FROM supllier";
 
     public SupplierRepository(Connection conn){
         this.conn = conn;
@@ -73,19 +75,19 @@ public class SupplierRepository implements Repository<Supplier>{
 
             //SET
             stat.setString(1, supplier.getName());
-            stat.setString(3, supplier.getAddress());
+            stat.setString(2, supplier.getAddress());
 
             //WHERE
-            stat.setInt(4,supplier.getId());
+            stat.setInt(3,supplier.getId());
 
             var res = stat.executeUpdate();
 
             if(res != 1){
-                throw new ClientExcpetion("could not updated client: "+ supplier.getId());
+                throw new ClientExcpetion("could not updated supplier: "+ supplier.getId());
             }
 
         }catch(Exception e){
-            throw new SupplierException("could not updated client: "+ supplier.getName());
+            throw new SupplierException("could not updated supplier: "+ supplier.getName());
         }
     }
 }

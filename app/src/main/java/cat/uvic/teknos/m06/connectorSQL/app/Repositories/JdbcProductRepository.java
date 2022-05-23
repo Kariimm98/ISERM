@@ -13,6 +13,9 @@ public class ProductRepository implements Repository<Product>{
     private Connection conn;
     private  String insert = "INSERT INTO product SET name = ?, description = ?, price = ? ";
     private String update = "UPDATE product SET name = ?, description = ?, price = ? where id = ?";
+    private String delete =  "DELETE FROM product WHERE id = ?";
+    private String selectById = "SELECT * FROM product WHERE id = ?";
+    private String selectAll = "SELECT * FROM product";
 
 
     public ProductRepository(Connection conn){
@@ -29,13 +32,35 @@ public class ProductRepository implements Repository<Product>{
     }
 
     @Override
-    public void delete(Product product) {
+    public void delete(Product product) throws ProductException {
+        try{
+            var stat = conn.prepareStatement(delete,Statement.CLOSE_CURRENT_RESULT);
 
+            stat.setInt(1,product.getId());
+            var res = stat.executeUpdate();
+            if(res==0){
+                throw new ProductException("could not delete product");
+            }
+
+        }catch(Exception e){
+            throw new ProductException("could not delete product: "+ product.getName());
+        }
     }
 
     @Override
-    public Product getById(int id) {
-        return null;
+    public Product getById(int id) throws ProductException {
+        Product prod = null;
+        try {
+            var stat = conn.prepareStatement(delete, Statement.CLOSE_CURRENT_RESULT);
+            var res = stat.executeQuery();
+
+            if (res.next()) {
+                prod = new Product(res.getInt("id"), res.getString("name"), res.getString("description"), res.getFloat("price"));
+            }
+        }catch(Exception e){
+            throw new ProductException("could not get product by id");
+        }
+        return prod;
     }
 
     @Override
@@ -57,14 +82,14 @@ public class ProductRepository implements Repository<Product>{
             var res = stat.getGeneratedKeys();
 
             if(res == null){
-                throw new ProductException("could not insert client: "+ product.getName());
+                throw new ProductException("could not insert product: "+ product.getName());
             }
 
             if(res.next()){
                 product.setId(res.getInt(1));
             }
         }catch(Exception e){
-            throw new ProductException("could not insert client: "+ product.getName());
+            throw new ProductException("could not insert product: "+ product.getName());
         }
     }
 
@@ -84,11 +109,11 @@ public class ProductRepository implements Repository<Product>{
             var res = stat.executeUpdate();
 
             if(res != 1){
-                throw new ProductException("could not updated client: "+ product.getId()+" " + product.getName());
+                throw new ProductException("could not updated product: "+ product.getId()+" " + product.getName());
             }
 
         }catch(Exception e){
-            throw new ProductException("could not updated client: "+ product.getName());
+            throw new ProductException("could not updated product: "+ product.getName());
         }
     }
 }

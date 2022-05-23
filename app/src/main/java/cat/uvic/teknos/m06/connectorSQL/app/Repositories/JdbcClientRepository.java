@@ -1,7 +1,9 @@
 package cat.uvic.teknos.m06.connectorSQL.app.Repositories;
 
 import cat.uvic.teknos.m06.connectorSQL.app.Exception.ClientExcpetion;
+import cat.uvic.teknos.m06.connectorSQL.app.Exception.ProductException;
 import cat.uvic.teknos.m06.connectorSQL.app.Model.Client;
+import cat.uvic.teknos.m06.connectorSQL.app.Model.Product;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -13,6 +15,8 @@ public class ClientRepository implements Repository<Client>{
     private String insert = "INSERT INTO client SET name = ?, surname = ?, address = ? ";
     private String update = "UPDATE client SET name = ?, surname = ?, address = ? where id = ?";
     private String delete = "DELETE FROM client WHERE id = ?";
+    private String select = "SEKECT * FROM client WHERE id = ?";
+    private String selectAll = "SELECT * FROM client WHERE id = ?";
 
 
     public ClientRepository(Connection conn){
@@ -30,13 +34,38 @@ public class ClientRepository implements Repository<Client>{
     }
 
     @Override
-    public void delete(Client client) {
+    public void delete(Client client) throws ClientExcpetion {
+        try{
+            var stat = conn.prepareStatement(delete,Statement.CLOSE_CURRENT_RESULT);
 
+            stat.setInt(1,client.getId());
+            var res = stat.executeUpdate();
+            if(res==0){
+                throw new ProductException("could not delete product");
+            }
+
+        }catch(Exception e){
+            throw new ClientExcpetion("could not delete product: "+ client.getName());
+        }
     }
 
     @Override
-    public Client getById(int id) {
-        return null;
+    public Client getById(int id) throws ClientExcpetion {
+        Client cli = null;
+        try {
+            var stat = conn.prepareStatement(delete, Statement.CLOSE_CURRENT_RESULT);
+            stat.setInt(1,id);
+
+            var res = stat.executeQuery();
+
+            if (res.next()) {
+                cli = new Client(res.getInt("id"), res.getString("name"), res.getString("surname"), res.getString("address"));
+            }
+        }catch(Exception e){
+            throw new ClientExcpetion("could not get by id");
+        }
+
+        return cli;
     }
 
     @Override
@@ -52,6 +81,7 @@ public class ClientRepository implements Repository<Client>{
             stat.setString(1, client.getName());
             stat.setString(2, client.getSurname());
             stat.setString(3, client.getAddress());
+
 
             stat.executeUpdate();
 
