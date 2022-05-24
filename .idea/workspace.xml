@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2809f5f8-88e3-4acf-a5df-8e724c5b40e1" name="Changes" comment="add method update To client Repository, implement ProductRepository, ProductException, and testing ProductRepositoryTest.">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Exception/SupplierException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/SupplierRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/ClientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/JdbcClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/JdbcClientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/JdbcProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/JdbcProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/JdbcSupplierRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/JdbcSupplierRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcClientRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcClientRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcExecuteCommandsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/Jdbc1ExecuteCommandsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcProductRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcProductRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcSupplierRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcSupplierRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/resources/xml/schema.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/resources/xml/schema.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,8 +121,8 @@
       <recent name="cat.uvic.teknos.m06.connectorSQL.app" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ProductRepositoryTest">
-    <configuration name="ClientRepositoryTest.throwsClientException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.JdbcSupplierRepositoryTest.notThrowExceptionOnDelete">
+    <configuration name="JdbcProductRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -131,7 +135,7 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.ClientRepositoryTest.throwsClientException&quot;" />
+            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.JdbcProductRepositoryTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -141,7 +145,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ProductRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JdbcProductRepositoryTest.NotThrowsExceptionOnSelect" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -154,7 +158,7 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.ProductRepositoryTest&quot;" />
+            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.JdbcProductRepositoryTest.NotThrowsExceptionOnSelect&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -164,7 +168,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ProductRepositoryTest.NotThrowsExceptionOnInsert" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JdbcProductRepositoryTest.notThrowExceptionOnUpdate" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -177,7 +181,7 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.ProductRepositoryTest.NotThrowsExceptionOnInsert&quot;" />
+            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.JdbcProductRepositoryTest.notThrowExceptionOnUpdate&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -187,7 +191,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ProductRepositoryTest.ThrowProductException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JdbcSupplierRepositoryTest.notThrowExceptionOnDelete" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -200,7 +204,7 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.ProductRepositoryTest.ThrowProductException&quot;" />
+            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.JdbcSupplierRepositoryTest.notThrowExceptionOnDelete&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -210,7 +214,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ProductRepositoryTest.notThrowExcpetionOnUpdate" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JdbcSupplierRepositoryTest.notThrowExceptionOnUpdate" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -223,7 +227,7 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.ProductRepositoryTest.notThrowExcpetionOnUpdate&quot;" />
+            <option value="&quot;cat.uvic.teknos.m06.connectorSQL.app.JdbcSupplierRepositoryTest.notThrowExceptionOnUpdate&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -235,11 +239,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ProductRepositoryTest" />
-        <item itemvalue="Gradle.ProductRepositoryTest.ThrowProductException" />
-        <item itemvalue="Gradle.ProductRepositoryTest.notThrowExcpetionOnUpdate" />
-        <item itemvalue="Gradle.ProductRepositoryTest.NotThrowsExceptionOnInsert" />
-        <item itemvalue="Gradle.ClientRepositoryTest.throwsClientException" />
+        <item itemvalue="Gradle.JdbcSupplierRepositoryTest.notThrowExceptionOnDelete" />
+        <item itemvalue="Gradle.JdbcSupplierRepositoryTest.notThrowExceptionOnUpdate" />
+        <item itemvalue="Gradle.JdbcProductRepositoryTest" />
+        <item itemvalue="Gradle.JdbcProductRepositoryTest.NotThrowsExceptionOnSelect" />
+        <item itemvalue="Gradle.JdbcProductRepositoryTest.notThrowExceptionOnUpdate" />
       </list>
     </recent_temporary>
   </component>
@@ -273,7 +277,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/ExecuteCommandsTest.java</url>
+          <url>file://$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/Jdbc1ExecuteCommandsTest.java</url>
           <line>21</line>
           <properties>
             <option name="lambda-ordinal" value="-1" />
@@ -281,23 +285,56 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/ClientRepository.java</url>
-          <line>24</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/JdbcClientRepository.java</url>
+          <line>28</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/ClientRepositoryTest.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="12" />
+          <url>file://$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcClientRepositoryTest.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/JdbcClientRepository.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcClientRepositoryTest.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/Jdbc1ExecuteCommandsTest.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcSupplierRepositoryTest.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcClientRepositoryTest.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcProductRepositoryTest.java</url>
+          <line>49</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/ProductRepositoryTest.java</url>
-          <line>48</line>
-          <properties class="cat.uvic.teknos.m06.connectorSQL.app.ProductRepositoryTest" method="ThrowProductException">
+          <url>file://$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcClientRepositoryTest.java</url>
+          <line>53</line>
+          <properties class="cat.uvic.teknos.m06.connectorSQL.app.JdbcClientRepositoryTest" method="notThrowExeptionOnDelete">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="18" />
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -305,5 +342,8 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ConnectorSQL$JdbcSupplierRepositoryTest_NotThrowsExceptionOnSelectAll.ic" NAME="JdbcSupplierRepositoryTest.NotThrowsExceptionOnSelectAll Coverage Results" MODIFIED="1653327441749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -1,14 +1,14 @@
 package cat.uvic.teknos.m06.connectorSQL.app.Repositories;
 
-import cat.uvic.teknos.m06.connectorSQL.app.Exception.ClientExcpetion;
 import cat.uvic.teknos.m06.connectorSQL.app.Exception.ProductException;
 import cat.uvic.teknos.m06.connectorSQL.app.Model.Product;
 
 import java.sql.Connection;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
-public class ProductRepository implements Repository<Product>{
+public class JdbcProductRepository implements Repository<Product>{
 
     private Connection conn;
     private  String insert = "INSERT INTO product SET name = ?, description = ?, price = ? ";
@@ -18,7 +18,7 @@ public class ProductRepository implements Repository<Product>{
     private String selectAll = "SELECT * FROM product";
 
 
-    public ProductRepository(Connection conn){
+    public JdbcProductRepository(Connection conn){
         this.conn = conn;
     }
 
@@ -51,7 +51,9 @@ public class ProductRepository implements Repository<Product>{
     public Product getById(int id) throws ProductException {
         Product prod = null;
         try {
-            var stat = conn.prepareStatement(delete, Statement.CLOSE_CURRENT_RESULT);
+            var stat = conn.prepareStatement(selectById);
+
+            stat.setInt(1,id);
             var res = stat.executeQuery();
 
             if (res.next()) {
@@ -64,8 +66,21 @@ public class ProductRepository implements Repository<Product>{
     }
 
     @Override
-    public List<Product> getAll() {
-        return null;
+    public List<Product> getAll() throws ProductException {
+        Product prod = null;
+        List<Product> list = new ArrayList<Product>();
+        try {
+            var stat = conn.prepareStatement(selectAll);
+            var res = stat.executeQuery();
+
+            while(res.next()) {
+                prod = new Product(res.getInt("id"), res.getString("name"), res.getString("description"), res.getFloat("price"));
+                list.add(prod);
+            }
+        }catch(Exception e){
+            throw new ProductException("could not get product by id");
+        }
+        return list;
     }
 
     @Override
@@ -88,6 +103,7 @@ public class ProductRepository implements Repository<Product>{
             if(res.next()){
                 product.setId(res.getInt(1));
             }
+
         }catch(Exception e){
             throw new ProductException("could not insert product: "+ product.getName());
         }

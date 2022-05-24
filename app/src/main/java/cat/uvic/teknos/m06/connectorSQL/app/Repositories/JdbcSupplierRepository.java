@@ -1,22 +1,25 @@
 package cat.uvic.teknos.m06.connectorSQL.app.Repositories;
 
 import cat.uvic.teknos.m06.connectorSQL.app.Exception.ClientExcpetion;
+import cat.uvic.teknos.m06.connectorSQL.app.Exception.ProductException;
 import cat.uvic.teknos.m06.connectorSQL.app.Exception.SupplierException;
+import cat.uvic.teknos.m06.connectorSQL.app.Model.Client;
 import cat.uvic.teknos.m06.connectorSQL.app.Model.Supplier;
 
 import java.sql.Connection;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
-public class SupplierRepository implements Repository<Supplier>{
+public class JdbcSupplierRepository implements Repository<Supplier>{
     private Connection conn;
-    private String insert = "INSERT INTO supplier SET name = ?, surname = ?, address = ? ";
-    private String update = "UPDATE supplier SET name = ?, surname = ?, address = ? where id = ?";
-    private String delete = "DELETE FROM suppolier WHERE id = ? ";
+    private String insert = "INSERT INTO supplier SET name = ?,address = ? ";
+    private String update = "UPDATE supplier SET name = ?, address = ? where id = ?";
+    private String delete = "DELETE FROM supplier WHERE id = ? ";
     private String select = "SELECT * FROM supplier WHERE id = ?";
-    private String select_all = "SELECT * FROM supllier";
+    private String selectAll = "SELECT * FROM supplier";
 
-    public SupplierRepository(Connection conn){
+    public JdbcSupplierRepository(Connection conn){
         this.conn = conn;
     }
 
@@ -30,18 +33,57 @@ public class SupplierRepository implements Repository<Supplier>{
     }
 
     @Override
-    public void delete(Supplier supplier) {
+    public void delete(Supplier supplier) throws ClientExcpetion {
+        try{
+            var stat = conn.prepareStatement(delete,Statement.CLOSE_CURRENT_RESULT);
 
+            stat.setInt(1,supplier.getId());
+            var res = stat.executeUpdate();
+            if(res==0){
+                throw new ProductException("could not supplier product");
+            }
+
+        }catch(Exception e){
+            throw new ClientExcpetion("could not supplier product: "+ supplier.getName());
+        }
     }
 
     @Override
-    public Supplier getById(int id) {
-        return null;
+    public Supplier getById(int id) throws ClientExcpetion {
+        Supplier supp = null;
+        try {
+            var stat = conn.prepareStatement(select);
+
+            stat.setInt(1,id);
+
+            var res = stat.executeQuery();
+
+            if (res.next()) {
+                supp = new Supplier(res.getInt("id"), res.getString("name"), res.getString("address"));
+            }
+        }catch(Exception e){
+            throw new ClientExcpetion("could not get Supplier by id");
+        }
+        return supp;
     }
 
     @Override
-    public List<Supplier> getAll() {
-        return null;
+    public List<Supplier> getAll() throws ClientExcpetion {
+        Supplier supp = null;
+        List<Supplier> list = new ArrayList<Supplier>();
+        try {
+            var stat = conn.prepareStatement(selectAll);
+
+            var res = stat.executeQuery();
+
+            while(res.next()) {
+                supp = new Supplier(res.getInt("id"), res.getString("name"), res.getString("address"));
+                list.add(supp);
+            }
+        }catch(Exception e){
+            throw new ClientExcpetion("could not get Supplier by id");
+        }
+        return list;
     }
 
     @Override
@@ -50,7 +92,7 @@ public class SupplierRepository implements Repository<Supplier>{
             var stat = conn.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
 
             stat.setString(1, supplier.getName());
-            stat.setString(3, supplier.getAddress());
+            stat.setString(2, supplier.getAddress());
 
             stat.executeUpdate();
 

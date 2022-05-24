@@ -4,11 +4,9 @@ import cat.uvic.teknos.m06.connectorSQL.app.Exception.ConnectionException;
 import cat.uvic.teknos.m06.connectorSQL.app.Exception.ExecuteCommandException;
 import org.junit.jupiter.api.Test;
 
-import java.sql.SQLException;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-class ExecuteCommandsTest {
+class Jdbc1ExecuteCommandsTest {
 
     @Test
     void notThrowException() {
@@ -39,11 +37,7 @@ class ExecuteCommandsTest {
         ConnectionProperties conn = new ConnectionProperties("","","");
         XmlSchemaLoader schema = new XmlSchemaLoader("src/test/resources/xml/schema.xml");
 
-
         assertThrows(ConnectionException.class,()->new ExecuteCommands(schema,conn));
-        ExecuteCommands executeCommands = new ExecuteCommands(schema,conn);
-
-        assertDoesNotThrow(()->executeCommands.load()); ;
     }
 
 }
