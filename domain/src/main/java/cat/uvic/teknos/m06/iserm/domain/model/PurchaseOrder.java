@@ -1,23 +1,27 @@
-package cat.uvic.teknos.m06.connectorSQL.list.model;
+package cat.uvic.teknos.m06.iserm.domain.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
 @Entity
 public class PurchaseOrder {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
-    private Client client;
+    @Transient
+    private int idClient;
     private Date purchased_on;
+    @Transient
     private List<PurchaseLineOrder> lines;
 
-    public PurchaseOrder(int id, Client client, Date data, List<PurchaseLineOrder> lines) {
+    public PurchaseOrder(){
+
+    }
+
+    public PurchaseOrder(int id, int idClient, Date data, List<PurchaseLineOrder> lines) {
         this.id = id;
-        this.client = client;
+        this.idClient = idClient;
         this.purchased_on = data;
         this.lines = lines;
     }
@@ -31,11 +35,11 @@ public class PurchaseOrder {
     }
 
     public Client getClient() {
-        return client;
+        return null;
     }
 
     public void setClient(Client client) {
-        this.client = client;
+        this.idClient = client.getId();
     }
 
     public Date getData() {

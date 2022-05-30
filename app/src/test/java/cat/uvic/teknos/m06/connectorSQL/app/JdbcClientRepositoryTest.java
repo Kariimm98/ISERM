@@ -2,7 +2,7 @@ package cat.uvic.teknos.m06.connectorSQL.app;
 
 import cat.uvic.teknos.m06.connectorSQL.app.Exception.ClientExcpetion;
 import cat.uvic.teknos.m06.connectorSQL.app.Exception.ConnectionException;
-import cat.uvic.teknos.m06.connectorSQL.app.Model.Client;
+import cat.uvic.teknos.m06.connectorSQL.utilities.models.Client;
 import cat.uvic.teknos.m06.connectorSQL.app.Repositories.JdbcClientRepository;
 import org.junit.jupiter.api.Test;
 

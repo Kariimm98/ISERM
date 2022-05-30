@@ -1,7 +1,7 @@
 package cat.uvic.teknos.m06.connectorSQL.app.Repositories;
 
 import cat.uvic.teknos.m06.connectorSQL.app.Exception.ProductException;
-import cat.uvic.teknos.m06.connectorSQL.app.Model.Product;
+import cat.uvic.teknos.m06.connectorSQL.utilities.models.Product;
 
 import java.sql.Connection;
 import java.sql.Statement;

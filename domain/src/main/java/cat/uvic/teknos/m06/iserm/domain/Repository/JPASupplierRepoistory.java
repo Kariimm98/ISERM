@@ -1,70 +1,67 @@
 package cat.uvic.teknos.m06.iserm.domain.Repository;
 
-
 import cat.uvic.teknos.m06.iserm.domain.Exception.ClientExcpetion;
 import cat.uvic.teknos.m06.iserm.domain.Exception.ProductException;
-import cat.uvic.teknos.m06.iserm.domain.model.Client;
 import cat.uvic.teknos.m06.iserm.domain.model.Product;
 import cat.uvic.teknos.m06.iserm.domain.model.Repository;
+import cat.uvic.teknos.m06.iserm.domain.model.Supplier;
 
 import javax.persistence.EntityManagerFactory;
 import java.util.List;
 
-public class JPAClientRepository implements Repository<Client> {
-
+public class JPASupplierRepoistory implements Repository<Supplier> {
     private final EntityManagerFactory entity;
 
-    public JPAClientRepository(EntityManagerFactory entity){
+    public JPASupplierRepoistory(EntityManagerFactory entity) {
         this.entity = entity;
     }
 
     @Override
-    public void save(Client client) throws Exception {
-        if(client.getId() == 0){
-            insert(client);
+    public void save(Supplier supplier) throws Exception {
+        if(supplier.getId() == 0){
+            insert(supplier);
         }else{
-            update(client);
+            update(supplier);
         }
     }
 
     @Override
-    public void delete(Client client) throws ProductException, ClientExcpetion {
+    public void delete(Supplier supplier) throws ProductException {
         var entityManager = entity.createEntityManager();
         entityManager.getTransaction().begin();
 
-        if(client!=null){
-            var merged = entityManager.merge(client);
+        if(supplier!=null){
+            var merged = entityManager.merge(supplier);
             entityManager.remove(merged);
         }
         entityManager.getTransaction().commit();
     }
 
     @Override
-    public Client getById(int id) throws ProductException, ClientExcpetion {
+    public Supplier getById(int id) throws ProductException, ClientExcpetion {
         var entityManager = entity.createEntityManager();
-        return entityManager.find(Client.class,id);
+        return entityManager.find(Supplier.class,id);
     }
 
     @Override
-    public List<Client> getAll() throws ClientExcpetion, ProductException {
+    public List<Supplier> getAll() throws ClientExcpetion, ProductException {
         var entityManager = entity.createEntityManager();
-
-        return entityManager.createNativeQuery("SELECT * FROM client").getResultList();
+        return entityManager.createNativeQuery("SELECT * FROM supplier").getResultList();
     }
 
     @Override
-    public void insert(Client client) throws Exception {
+    public void insert(Supplier supplier) throws Exception {
         var entityManager = entity.createEntityManager();
         entityManager.getTransaction().begin();
-        entityManager.persist(client);
+        entityManager.persist(supplier);
         entityManager.getTransaction().commit();
     }
 
     @Override
-    public void update(Client client) throws Exception {
+    public void update(Supplier supplier) throws Exception {
         var entityManager = entity.createEntityManager();
         entityManager.getTransaction().begin();
-        entityManager.merge(client);
+        entityManager.merge(supplier);
         entityManager.getTransaction().commit();
     }
 }

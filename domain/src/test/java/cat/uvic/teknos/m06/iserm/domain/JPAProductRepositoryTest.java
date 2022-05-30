@@ -3,7 +3,9 @@ package cat.uvic.teknos.m06.iserm.domain;
 import cat.uvic.teknos.m06.iserm.domain.Exception.ClientExcpetion;
 import cat.uvic.teknos.m06.iserm.domain.Exception.ProductException;
 import cat.uvic.teknos.m06.iserm.domain.Repository.JPAClientRepository;
+import cat.uvic.teknos.m06.iserm.domain.Repository.JPAProductRepository;
 import cat.uvic.teknos.m06.iserm.domain.model.Client;
+import cat.uvic.teknos.m06.iserm.domain.model.Product;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -12,54 +14,52 @@ import javax.persistence.Persistence;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class JPAClientRepositoryTest {
+public class JPAProductRepositoryTest {
     private static EntityManagerFactory entity ;
-    private static JPAClientRepository repository;
+    private static JPAProductRepository repository;
 
     @BeforeAll
     static void setUp(){
         entity = Persistence.createEntityManagerFactory("ISERM");
-        repository = new JPAClientRepository(entity);
+        repository = new JPAProductRepository(entity);
     }
 
     @Test
     public void saveInsert() throws Exception {
-        var repos = new JPAClientRepository(entity);
-        var client = new Client();
-        client.setName("Pepe");
-        client.setAddress("add");
-        client.setSurname("proves");
+        var repos = new JPAProductRepository(entity);
+        var prod = new Product();
+        prod.setName("Razer Viper Ultimate");
+        prod.setDescription("Raton Gaming Inalambrico 20000 DPI");
+        prod.setPrice((float)81.74);
 
         assertDoesNotThrow(()->{
-            repos.save(client);
+            repos.save(prod);
         });
 
-        assertTrue(client.getId()>0);
+        assertTrue(prod.getId()>0);
 
     }
 
     @Test
     public void saveUpdate(){
-        var repos = new JPAClientRepository(entity);
-        var client = new Client();
-        client.setId(1);
-        client.setName("Pepe2");
-        client.setAddress("add2");
-        client.setSurname("proves2");
+        var repos = new JPAProductRepository(entity);
+        var prod = new Product();
+        prod.setName("Razer Viper Ultimate");
+        prod.setDescription("Ratón Gaming Inalámbrico 20000 DPI");
+        prod.setPrice((float)81.74);
 
         assertDoesNotThrow(()->{
-            repos.save(client);
+            repos.save(prod);
         });
 
-        assertTrue(client.getId()>0);
+        assertTrue(prod.getId()>0);
     }
 
     @Test
     void FindById() throws Exception {
 
-        var client = repository.getById(1);
-
-        assertTrue(client.getId()>0);
+        var product = repository.getById(1);
+        assertTrue(product.getId()>0);
     }
 
     @Test
@@ -70,10 +70,10 @@ public class JPAClientRepositoryTest {
 
     @Test
     void deleteOne() throws ClientExcpetion, ProductException {
-        var client = repository.getById(2);
-        repository.delete(client);
-        client = repository.getById(2);
-        assertNull(client);
+        var product = repository.getById(2);
+        repository.delete(product);
+        product = repository.getById(2);
+        assertNull(product);
 
     }
 }

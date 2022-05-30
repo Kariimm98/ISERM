@@ -1,17 +1,22 @@
-package cat.uvic.teknos.m06.connectorSQL.list.model;
+package cat.uvic.teknos.m06.iserm.domain.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Product {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
     private String name;
     private String description;
     private float price;
+
+    public Product(){
+
+    }
 
     public Product(int id, String name, String description, float price) {
         this.id = id;

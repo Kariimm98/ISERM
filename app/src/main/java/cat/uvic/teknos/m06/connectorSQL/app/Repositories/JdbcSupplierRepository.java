@@ -3,8 +3,7 @@ package cat.uvic.teknos.m06.connectorSQL.app.Repositories;
 import cat.uvic.teknos.m06.connectorSQL.app.Exception.ClientExcpetion;
 import cat.uvic.teknos.m06.connectorSQL.app.Exception.ProductException;
 import cat.uvic.teknos.m06.connectorSQL.app.Exception.SupplierException;
-import cat.uvic.teknos.m06.connectorSQL.app.Model.Client;
-import cat.uvic.teknos.m06.connectorSQL.app.Model.Supplier;
+import cat.uvic.teknos.m06.connectorSQL.utilities.models.Supplier;
 
 import java.sql.Connection;
 import java.sql.Statement;

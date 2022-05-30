@@ -1,8 +1,8 @@
-package cat.uvic.teknos.m06.connectorSQL.list.model;
+package cat.uvic.teknos.m06.iserm.domain.model;
 
 
-import cat.uvic.teknos.m06.connectorSQL.list.Exception.ClientExcpetion;
-import cat.uvic.teknos.m06.connectorSQL.list.Exception.ProductException;
+import cat.uvic.teknos.m06.iserm.domain.Exception.ClientExcpetion;
+import cat.uvic.teknos.m06.iserm.domain.Exception.ProductException;
 
 import java.util.List;
 

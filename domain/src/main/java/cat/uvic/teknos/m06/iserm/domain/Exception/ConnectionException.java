@@ -1,4 +1,4 @@
-package cat.uvic.teknos.m06.connectorSQL.list.Exception;
+package cat.uvic.teknos.m06.iserm.domain.Exception;
 
 public class ConnectionException extends Exception{
 

@@ -1,9 +1,15 @@
-package cat.uvic.teknos.m06.connectorSQL.app.Model;
+package cat.uvic.teknos.m06.connectorSQL.utilities.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Date;
 import java.util.List;
 
+@Entity
 public class PurchaseOrder {
+    @Id
+    @GeneratedValue
     private int id;
     private Client client;
     private Date purchased_on;

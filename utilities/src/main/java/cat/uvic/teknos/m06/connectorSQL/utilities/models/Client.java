@@ -1,7 +1,14 @@
-package cat.uvic.teknos.m06.connectorSQL.app.Model;
+package cat.uvic.teknos.m06.connectorSQL.utilities.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Client {
 
+    @Id
+    @GeneratedValue
     private int id;
     private String name;
     private String surname;

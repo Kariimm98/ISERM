@@ -8,5 +8,5 @@
  * This project uses @Incubating APIs which are subject to change.
  */
 
-rootProject.name = 'ConnectorSQL'
-include('app', 'list', 'utilities')
+rootProject.name = 'ISERM'
+include('app', 'domain', 'utilities')
