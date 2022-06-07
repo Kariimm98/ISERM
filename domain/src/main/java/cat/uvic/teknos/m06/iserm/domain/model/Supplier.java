@@ -1,10 +1,7 @@
 package cat.uvic.teknos.m06.iserm.domain.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Supplier {
@@ -12,11 +9,15 @@ public class Supplier {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
     private String name;
+
+    @OneToOne(mappedBy ="Address", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
     private String address;
 
     public Supplier(){
 
     }
+
     public Supplier(int id, String name, String address) {
         this.id = id;
         this.name = name;

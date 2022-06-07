@@ -5,8 +5,11 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <class>cat.uvic.teknos.m06.iserm.domain.model.Client</class>
+        <class>cat.uvic.teknos.m06.iserm.domain.model.Address</class>
         <class>cat.uvic.teknos.m06.iserm.domain.model.Supplier</class>
         <class>cat.uvic.teknos.m06.iserm.domain.model.Product</class>
+        <class>cat.uvic.teknos.m06.iserm.domain.model.PurchaseOrder</class>
+
 
         <properties>
             <!--<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver" />-->

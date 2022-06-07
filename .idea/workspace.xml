@@ -5,45 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2809f5f8-88e3-4acf-a5df-8e724c5b40e1" name="Changes" comment="add method update To client Repository, implement ProductRepository, ProductException, and testing ProductRepositoryTest.">
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Repository/JPAProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Repository/JPASupplierRepoistory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/test/java/cat/uvic/teknos/m06/iserm/domain/JPAProductRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/test/java/cat/uvic/teknos/m06/iserm/domain/JPASupplierRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Repository/JPAPurchaseOrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/test/java/cat/uvic/teknos/m06/iserm/domain/JPAPurchaseOrderRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/logs/errorSchemaLoaderLog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/JdbcClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/JdbcClientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/JdbcProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/JdbcProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/JdbcSupplierRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cat/uvic/teknos/m06/connectorSQL/app/Repositories/JdbcSupplierRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcClientRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcClientRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcProductRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcProductRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcSupplierRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcSupplierRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/domain/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Exception/ClientExcpetion.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Exception/ClientExcpetion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Exception/ConnectionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Exception/ConnectionException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Exception/ExecuteCommandException.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Exception/ExecuteCommandException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Exception/ProductException.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Exception/ProductException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Exception/SupplierException.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Exception/SupplierException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Repository/JPAClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Repository/JPAClientRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/PurchaseLineOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/PurchaseLineOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/PurchaseOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/PurchaseOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/Repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/Supplier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/test/java/cat/uvic/teknos/m06/iserm/domain/JPAClientRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/test/java/cat/uvic/teknos/m06/iserm/domain/JPAClientRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/test/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/test/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/cat/uvic/teknos/m06/connectorSQL/utilities/models/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/cat/uvic/teknos/m06/connectorSQL/utilities/models/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/cat/uvic/teknos/m06/connectorSQL/utilities/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/cat/uvic/teknos/m06/connectorSQL/utilities/models/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/cat/uvic/teknos/m06/connectorSQL/utilities/models/PurchaseLineOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/cat/uvic/teknos/m06/connectorSQL/utilities/models/PurchaseLineOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/cat/uvic/teknos/m06/connectorSQL/utilities/models/PurchaseOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/cat/uvic/teknos/m06/connectorSQL/utilities/models/PurchaseOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/src/main/java/cat/uvic/teknos/m06/connectorSQL/utilities/models/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/main/java/cat/uvic/teknos/m06/connectorSQL/utilities/models/Supplier.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,30 +139,7 @@
       <command value="gradle --refresh-dependencies" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.JPASupplierRepositoryTest">
-    <configuration name="JPAClientRepositoryTest.deleteOne" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":domain:test" />
-            <option value="--tests" />
-            <option value="&quot;cat.uvic.teknos.m06.iserm.domain.JPAClientRepositoryTest.deleteOne&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.JPAPurchaseOrderRepositoryTest.saveInsert">
     <configuration name="JPAClientRepositoryTest.saveInsert" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -263,6 +209,29 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="JPAPurchaseOrderRepositoryTest.saveInsert" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":domain:test" />
+            <option value="--tests" />
+            <option value="&quot;cat.uvic.teknos.m06.iserm.domain.JPAPurchaseOrderRepositoryTest.saveInsert&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="JPASupplierRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -288,11 +257,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.JPAPurchaseOrderRepositoryTest.saveInsert" />
         <item itemvalue="Gradle.JPASupplierRepositoryTest" />
         <item itemvalue="Gradle.JPAProductRepositoryTest" />
         <item itemvalue="Gradle.JPAProductRepositoryTest.saveInsert" />
         <item itemvalue="Gradle.JPAClientRepositoryTest.saveInsert" />
-        <item itemvalue="Gradle.JPAClientRepositoryTest.deleteOne" />
       </list>
     </recent_temporary>
   </component>
@@ -395,6 +364,11 @@
           <url>file://$PROJECT_DIR$/domain/src/test/java/cat/uvic/teknos/m06/iserm/domain/JPAClientRepositoryTest.java</url>
           <line>66</line>
           <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/PurchaseOrder.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcClientRepositoryTest.java</url>

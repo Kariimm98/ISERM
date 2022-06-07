@@ -8,9 +8,9 @@ public class PurchaseLineOrder {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
     @Transient
-    private int idOrder;
+    private PurchaseOrder order;
     @Transient
-    private int idProduct;
+    private Product product;
     private float quantity;
 
     public int getId() {
@@ -21,20 +21,20 @@ public class PurchaseLineOrder {
         this.id = id;
     }
 
-    public int getIdOrder() {
-        return idOrder;
+    public PurchaseOrder getOrder() {
+        return this.order;
     }
 
-    public void setIdOrder(int idOrder) {
-        this.idOrder = idOrder;
+    public void setIdOrder(PurchaseOrder order) {
+        this.order = order;
     }
 
-    public int getIdProduct() {
-        return idProduct;
+    public Product getProduct() {
+        return this.product;
     }
 
-    public void setIdProduct(int idProduct) {
-        this.idProduct = idProduct;
+    public void setIdProduct(Product product) {
+        this.product = product;
     }
 
     public float getQuantity() {

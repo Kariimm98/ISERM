@@ -1,9 +1,7 @@
 package cat.uvic.teknos.m06.iserm.domain.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Client {
@@ -12,6 +10,8 @@ public class Client {
     private int id;
     private String name;
     private String surname;
+
+    @PrimaryKeyJoinColumn
     private String address;
 
     public Client(){
