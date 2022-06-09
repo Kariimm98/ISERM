@@ -20,5 +20,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'cat.uvic.teknos.m06.connectorSQL.app.App'
+    mainClass = 'cat.uvic.teknos.m06.ISERM.app.App'
 }

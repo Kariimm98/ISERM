@@ -11,11 +11,8 @@ public class PurchaseOrder {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
 
-    @ManyToMany
-    @JoinTable(
-            name = "client",
-            joinColumns = @JoinColumn(name = "id"),
-            inverseJoinColumns = @JoinColumn(name = "id_client"))
+    @ManyToOne
+    @JoinColumn(name="client_id", nullable=false)
     private Client client;
 
     private Date purchased_on;
@@ -40,7 +37,7 @@ public class PurchaseOrder {
     }
 
     public Client getClient() {
-        return null;
+        return this.client;
     }
 
     public void setClient(Client client) {

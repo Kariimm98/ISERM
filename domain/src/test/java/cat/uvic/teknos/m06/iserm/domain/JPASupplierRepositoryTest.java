@@ -2,9 +2,7 @@ package cat.uvic.teknos.m06.iserm.domain;
 
 import cat.uvic.teknos.m06.iserm.domain.Exception.ClientExcpetion;
 import cat.uvic.teknos.m06.iserm.domain.Exception.ProductException;
-import cat.uvic.teknos.m06.iserm.domain.Repository.JPAProductRepository;
-import cat.uvic.teknos.m06.iserm.domain.Repository.JPASupplierRepoistory;
-import cat.uvic.teknos.m06.iserm.domain.model.Product;
+import cat.uvic.teknos.m06.iserm.domain.Repository.JPASupplierRepository;
 import cat.uvic.teknos.m06.iserm.domain.model.Supplier;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -16,17 +14,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class JPASupplierRepositoryTest {
     private static EntityManagerFactory entity ;
-    private static JPASupplierRepoistory repository;
+    private static JPASupplierRepository repository;
 
     @BeforeAll
     static void setUp(){
         entity = Persistence.createEntityManagerFactory("ISERM");
-        repository = new JPASupplierRepoistory(entity);
+        repository = new JPASupplierRepository(entity);
     }
 
     @Test
     public void saveInsert() throws Exception {
-        var repos = new JPASupplierRepoistory(entity);
+        var repos = new JPASupplierRepository(entity);
         var sup = new Supplier();
         sup.setName("HP");
         sup.setAddress("Av.Las Vegas");
@@ -41,7 +39,7 @@ public class JPASupplierRepositoryTest {
 
     @Test
     public void saveUpdate(){
-        var repos = new JPASupplierRepoistory(entity);
+        var repos = new JPASupplierRepository(entity);
         var sup = new Supplier();
         sup.setName("HP");
         sup.setAddress("Av.Las Vegas");

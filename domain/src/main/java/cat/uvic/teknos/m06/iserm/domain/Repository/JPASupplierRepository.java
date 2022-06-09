@@ -2,17 +2,17 @@ package cat.uvic.teknos.m06.iserm.domain.Repository;
 
 import cat.uvic.teknos.m06.iserm.domain.Exception.ClientExcpetion;
 import cat.uvic.teknos.m06.iserm.domain.Exception.ProductException;
-import cat.uvic.teknos.m06.iserm.domain.model.Product;
 import cat.uvic.teknos.m06.iserm.domain.model.Repository;
 import cat.uvic.teknos.m06.iserm.domain.model.Supplier;
 
 import javax.persistence.EntityManagerFactory;
+import java.util.ArrayList;
 import java.util.List;
 
-public class JPASupplierRepoistory implements Repository<Supplier> {
+public class JPASupplierRepository implements Repository<Supplier> {
     private final EntityManagerFactory entity;
 
-    public JPASupplierRepoistory(EntityManagerFactory entity) {
+    public JPASupplierRepository(EntityManagerFactory entity) {
         this.entity = entity;
     }
 
@@ -46,7 +46,14 @@ public class JPASupplierRepoistory implements Repository<Supplier> {
     @Override
     public List<Supplier> getAll() throws ClientExcpetion, ProductException {
         var entityManager = entity.createEntityManager();
-        return entityManager.createNativeQuery("SELECT * FROM supplier").getResultList();
+        List<Object[]> table = entityManager.createNativeQuery("SELECT * FROM supplier").getResultList();
+        List<Supplier> list = new ArrayList<Supplier>();
+
+        for(Object[] value : table){
+            Supplier supp = new Supplier((Integer) value[0], (String) value[1], (String) value[2]);
+            list.add(supp);
+        }
+        return list;
     }
 
     @Override

@@ -9,9 +9,6 @@ public class Supplier {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
     private String name;
-
-    @OneToOne(mappedBy ="Address", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
     private String address;
 
     public Supplier(){

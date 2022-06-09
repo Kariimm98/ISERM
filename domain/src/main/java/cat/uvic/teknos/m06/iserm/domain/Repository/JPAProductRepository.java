@@ -4,8 +4,10 @@ import cat.uvic.teknos.m06.iserm.domain.Exception.ClientExcpetion;
 import cat.uvic.teknos.m06.iserm.domain.Exception.ProductException;
 import cat.uvic.teknos.m06.iserm.domain.model.Product;
 import cat.uvic.teknos.m06.iserm.domain.model.Repository;
+import cat.uvic.teknos.m06.iserm.domain.model.Supplier;
 
 import javax.persistence.EntityManagerFactory;
+import java.util.ArrayList;
 import java.util.List;
 
 public class JPAProductRepository implements Repository<Product> {
@@ -47,7 +49,14 @@ public class JPAProductRepository implements Repository<Product> {
     public List<Product> getAll() throws ClientExcpetion, ProductException {
         var entityManager = entity.createEntityManager();
 
-        return entityManager.createNativeQuery("SELECT * FROM product").getResultList();
+        List<Object[]> table =entityManager.createNativeQuery("SELECT * FROM product").getResultList();
+        List<Product> list = new ArrayList<Product>();
+
+        for(Object[] value : table){
+            Product prod = new Product( (int)value[0], (String)value[1], (String)value[2],(float)value[3]);
+            list.add(prod);
+        }
+        return list;
     }
 
     @Override
