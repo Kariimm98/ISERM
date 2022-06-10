@@ -4,21 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2809f5f8-88e3-4acf-a5df-8e724c5b40e1" name="Changes" comment="add method update To client Repository, implement ProductRepository, ProductException, and testing ProductRepositoryTest.">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="2809f5f8-88e3-4acf-a5df-8e724c5b40e1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Repository/JPAPurchaseLineOrderRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Repository/JPAProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Repository/JPAProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Repository/JPASupplierRepoistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/Repository/JPASupplierRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/PurchaseLineOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/PurchaseLineOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/PurchaseOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/PurchaseOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/Supplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/test/java/cat/uvic/teknos/m06/iserm/domain/JPAProductRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/test/java/cat/uvic/teknos/m06/iserm/domain/JPAProductRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/test/java/cat/uvic/teknos/m06/iserm/domain/JPASupplierRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/test/java/cat/uvic/teknos/m06/iserm/domain/JPASupplierRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/test/java/cat/uvic/teknos/m06/iserm/domain/JPAPurchaseOrderRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/test/java/cat/uvic/teknos/m06/iserm/domain/JPAPurchaseOrderRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,18 +74,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/domain/src/main/resources" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Mercurial&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\10011093\source\repos\ISERM\domain\src\main\resources" />
@@ -129,7 +115,30 @@
       <command value="gradle --refresh-dependencies" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.JPAProductRepositoryTest.saveUpdate">
+  <component name="RunManager" selected="Gradle.JPASupplierRepositoryTest">
+    <configuration name="JPAClientRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":domain:test" />
+            <option value="--tests" />
+            <option value="&quot;cat.uvic.teknos.m06.iserm.domain.JPAClientRepositoryTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="JPAProductRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -153,7 +162,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="JPAProductRepositoryTest.saveInsert" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JPAPurchaseOrderRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -166,7 +175,7 @@
           <list>
             <option value=":domain:test" />
             <option value="--tests" />
-            <option value="&quot;cat.uvic.teknos.m06.iserm.domain.JPAProductRepositoryTest.saveInsert&quot;" />
+            <option value="&quot;cat.uvic.teknos.m06.iserm.domain.JPAPurchaseOrderRepositoryTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -176,30 +185,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="JPAProductRepositoryTest.saveUpdate" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":domain:test" />
-            <option value="--tests" />
-            <option value="&quot;cat.uvic.teknos.m06.iserm.domain.JPAProductRepositoryTest.saveUpdate&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="JPAPurchaseOrderRepositoryTest.saveInsert (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JPAPurchaseOrderRepositoryTest.saveInsert" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -245,26 +231,13 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="ISERM" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="ISERM" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.JPAProductRepositoryTest.saveUpdate" />
-        <item itemvalue="Gradle.JPAProductRepositoryTest.saveInsert" />
-        <item itemvalue="Gradle.JPAPurchaseOrderRepositoryTest.saveInsert (1)" />
         <item itemvalue="Gradle.JPASupplierRepositoryTest" />
+        <item itemvalue="Gradle.JPAPurchaseOrderRepositoryTest" />
         <item itemvalue="Gradle.JPAProductRepositoryTest" />
+        <item itemvalue="Gradle.JPAClientRepositoryTest" />
+        <item itemvalue="Gradle.JPAPurchaseOrderRepositoryTest.saveInsert" />
       </list>
     </recent_temporary>
   </component>
@@ -367,21 +340,6 @@
           <url>file://$PROJECT_DIR$/domain/src/test/java/cat/uvic/teknos/m06/iserm/domain/JPAClientRepositoryTest.java</url>
           <line>66</line>
           <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/domain/src/test/java/cat/uvic/teknos/m06/iserm/domain/JPAProductRepositoryTest.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/domain/src/test/java/cat/uvic/teknos/m06/iserm/domain/JPAProductRepositoryTest.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/domain/src/test/java/cat/uvic/teknos/m06/iserm/domain/JPAProductRepositoryTest.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/app/src/test/java/cat/uvic/teknos/m06/connectorSQL/app/JdbcClientRepositoryTest.java</url>

@@ -16,16 +16,14 @@ public class PurchaseOrder {
     private Client client;
 
     private Date purchased_on;
-    @Transient
-    private List<PurchaseLineOrder> lines;
 
     public PurchaseOrder(){
     }
 
-    public PurchaseOrder(int id, Date data, List<PurchaseLineOrder> lines) {
+    public PurchaseOrder(int id, Date data) {
         this.id = id;
         this.purchased_on = data;
-        this.lines = lines;
+
     }
 
     public int getId() {
@@ -52,13 +50,4 @@ public class PurchaseOrder {
         this.purchased_on = data;
     }
 
-    public List<PurchaseLineOrder> getLines() {
-        return lines;
-    }
-
-    public void addLines(List<PurchaseLineOrder> lines) {
-        this.lines = lines;
-    }
-
-    public void addLine(PurchaseLineOrder line ){this.lines.add(line);}
 }

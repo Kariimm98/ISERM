@@ -27,7 +27,7 @@ public class PurchaseLineOrder {
         return this.order;
     }
 
-    public void setIdOrder(PurchaseOrder order) {
+    public void setOrder(PurchaseOrder order) {
         this.order = order;
     }
 
@@ -35,7 +35,7 @@ public class PurchaseLineOrder {
         return this.product;
     }
 
-    public void setIdProduct(Product product) {
+    public void setProduct(Product product) {
         this.product = product;
     }
 

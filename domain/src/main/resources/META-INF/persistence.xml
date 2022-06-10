@@ -9,6 +9,8 @@
         <class>cat.uvic.teknos.m06.iserm.domain.model.Supplier</class>
         <class>cat.uvic.teknos.m06.iserm.domain.model.Product</class>
         <class>cat.uvic.teknos.m06.iserm.domain.model.PurchaseOrder</class>
+        <class>cat.uvic.teknos.m06.iserm.domain.model.PurchaseLineOrder</class>
+
 
 
         <properties>

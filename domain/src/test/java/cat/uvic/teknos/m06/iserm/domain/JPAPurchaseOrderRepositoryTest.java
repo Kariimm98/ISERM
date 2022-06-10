@@ -3,8 +3,12 @@ package cat.uvic.teknos.m06.iserm.domain;
 import cat.uvic.teknos.m06.iserm.domain.Exception.ClientExcpetion;
 import cat.uvic.teknos.m06.iserm.domain.Exception.ProductException;
 import cat.uvic.teknos.m06.iserm.domain.Repository.JPAClientRepository;
+import cat.uvic.teknos.m06.iserm.domain.Repository.JPAProductRepository;
+import cat.uvic.teknos.m06.iserm.domain.Repository.JPAPurchaseLineOrderRepository;
 import cat.uvic.teknos.m06.iserm.domain.Repository.JPAPurchaseOrderRepository;
 import cat.uvic.teknos.m06.iserm.domain.model.Client;
+import cat.uvic.teknos.m06.iserm.domain.model.Product;
+import cat.uvic.teknos.m06.iserm.domain.model.PurchaseLineOrder;
 import cat.uvic.teknos.m06.iserm.domain.model.PurchaseOrder;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -27,55 +31,39 @@ public class JPAPurchaseOrderRepositoryTest {
 
     @Test
     public void saveInsert() throws Exception {
-        var repos = new JPAClientRepository(entity);
+        var repos = new JPAPurchaseOrderRepository(entity);
         var entityClient = new JPAClientRepository(entity);
+        var reposLine = new JPAPurchaseLineOrderRepository(entity);
+        var reposProduct = new JPAProductRepository(entity);
+
+        //searching Client of order
         var client = entityClient.getById(1);
 
         var order = new PurchaseOrder();
-
         order.setClient(client);
         repository.save(order);
-
         assertTrue(order.getId()> 0);
 
-    }
 
-    @Test
-    public void saveUpdate(){
-        var repos = new JPAClientRepository(entity);
-        var client = new Client();
-        client.setId(1);
-        client.setName("Pepe2");
-        client.setAddress("add2");
-        client.setSurname("proves2");
+        //insert first line to order
+        var product = reposProduct.getById(1);
+        var line = new PurchaseLineOrder();
+        line.setOrder(order);
+        line.setProduct(product);
+        line.setQuantity(2);
 
-        assertDoesNotThrow(()->{
-            repos.save(client);
-        });
+        reposLine.save(line);
 
-        assertTrue(client.getId()>0);
-    }
+        assertTrue(line.getId()> 0);
+        //insert second line to order
+        var product2 = reposProduct.getById(2);
+        var line2 = new PurchaseLineOrder();
+        line2.setOrder(order);
+        line2.setProduct(product2);
+        line2.setQuantity(4);
 
-    @Test
-    void FindById() throws Exception {
-
-        var client = repository.getById(1);
-
-        assertTrue(client.getId()>0);
-    }
-
-    @Test
-    void selectAll() throws ClientExcpetion, ProductException {
-        var list = repository.getAll();
-        assertNotNull(list);
-    }
-
-    @Test
-    void deleteOne() throws ClientExcpetion, ProductException {
-        var client = repository.getById(2);
-        repository.delete(client);
-        client = repository.getById(2);
-        assertNull(client);
+        reposLine.save(line2);
+        assertTrue(line2.getId()> 0);
 
     }
 }
