@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2809f5f8-88e3-4acf-a5df-8e724c5b40e1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/cat/uvic/teknos/m06/iserm/domain/model/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/test/java/cat/uvic/teknos/m06/iserm/domain/JPAClientRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/test/java/cat/uvic/teknos/m06/iserm/domain/JPAClientRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,8 +114,8 @@
       <command value="gradle --refresh-dependencies" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.JPAClientRepositoryTest">
-    <configuration name="JPAClientRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.JPAClientRepositoryTest (1)">
+    <configuration name="JPAClientRepositoryTest (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -235,11 +232,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.JPAClientRepositoryTest (1)" />
         <item itemvalue="Gradle.MongoClientRepositoryTest" />
         <item itemvalue="Gradle.JPASupplierRepositoryTest" />
         <item itemvalue="Gradle.JPAPurchaseOrderRepositoryTest" />
         <item itemvalue="Gradle.JPAProductRepositoryTest" />
-        <item itemvalue="Gradle.JPAClientRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
