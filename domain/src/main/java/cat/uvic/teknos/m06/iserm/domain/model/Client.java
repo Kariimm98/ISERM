@@ -1,5 +1,7 @@
 package cat.uvic.teknos.m06.iserm.domain.model;
 
+import org.bson.codecs.pojo.annotations.BsonProperty;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -7,6 +9,7 @@ import java.util.Set;
 public class Client {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @BsonProperty("id")
     private int id;
     private String name;
     private String surname;

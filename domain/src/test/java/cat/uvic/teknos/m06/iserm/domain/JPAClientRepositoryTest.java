@@ -50,7 +50,6 @@ public class JPAClientRepositoryTest {
         assertDoesNotThrow(()->{
             repos.save(client);
         });
-
         assertTrue(client.getId()>0);
     }
 
@@ -74,6 +73,5 @@ public class JPAClientRepositoryTest {
         repository.delete(client);
         client = repository.getById(2);
         assertNull(client);
-
     }
 }
